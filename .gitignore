@@ -1,0 +1,5 @@
+.stack-work/
+assorted.cabal
+*~.idea/
+.idea
+tmp/
