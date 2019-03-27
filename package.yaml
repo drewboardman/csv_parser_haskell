@@ -24,6 +24,10 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+    - cassava
+    - bytestring
+    - vector
 
 executables:
   csvParser-exe:
@@ -33,8 +37,14 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+    # - -Wmissing-import-lists
+    # - -Wmissing-export-lists
     dependencies:
-      - cassave
       - csvParser
 
 tests:

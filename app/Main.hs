@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import CsvReader (test)
 
 main :: IO ()
-main = someFunc
+main = test

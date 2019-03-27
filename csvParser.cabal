@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ed0df3ffaac016a276e06a9ea8de86c5171a44b4547024fe2a4ad01ea2884f44
+-- hash: 9b796af0a4d03d2c987ed6c6f253b1078ddf3be00eeb5da98dab9b6929c8bda0
 
 name:           csvParser
 version:        0.1.0.0
@@ -27,13 +27,16 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      CsvReader
   other-modules:
       Paths_csvParser
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , bytestring
+    , cassava
+    , vector
   default-language: Haskell2010
 
 executable csvParser-exe
@@ -42,7 +45,7 @@ executable csvParser-exe
       Paths_csvParser
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
     , csvParser
