@@ -8,6 +8,7 @@ module CsvReader (test) where
 import Data.Functor.Identity (Identity)
 import qualified Data.ByteString.Lazy as BL
 import           Data.Csv
+-- import           Control.Monad.Extra
 import qualified Data.Vector          as V
 
 type family HKD f a where
@@ -38,14 +39,14 @@ test = do
     Left err -> putStrLn err
     Right (_, vecRow) -> V.forM_ vecRow $ filterAndPrint . validate
 
-filterAndPrint :: MaybeRow -> IO ()
-filterAndPrint mRow = do
+filterAndPrint :: MaybeRow ->  IO ()
+filterAndPrint mRow = sequence_ $ do
   sName <- sectionName mRow
   mName <- menuName mRow
   uName <- userName mRow
-  case (channelID mRow) of
-    Just channel -> (putStrLn $ sName ++ mName ++ show (channel) ++ uName)
-    Nothing -> ()
+  return $ case channelID mRow of
+    Just channel -> putStrLn $ sName ++ mName ++ show channel ++ uName
+    Nothing -> return ()
 
 isGoodChannel :: Int -> Maybe Int
 isGoodChannel c = if c > 5 then Just c else Nothing

@@ -28,6 +28,7 @@ library:
     - cassava
     - bytestring
     - vector
+    - monad-extras
 
 executables:
   csvParser-exe:
