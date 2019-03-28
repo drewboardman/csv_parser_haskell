@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9b796af0a4d03d2c987ed6c6f253b1078ddf3be00eeb5da98dab9b6929c8bda0
+-- hash: 1bbc322b39af1766cc45164821768cc40c2cb2178ecafccc98be14bcd48af267
 
 name:           csvParser
 version:        0.1.0.0
@@ -27,7 +27,7 @@ source-repository head
 
 library
   exposed-modules:
-      CsvReader
+      SimpleParser
   other-modules:
       Paths_csvParser
   hs-source-dirs:
@@ -36,6 +36,7 @@ library
       base >=4.7 && <5
     , bytestring
     , cassava
+    , monad-extras
     , vector
   default-language: Haskell2010
 

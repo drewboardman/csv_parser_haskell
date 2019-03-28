@@ -3,3 +3,5 @@ assorted.cabal
 *~.idea/
 .idea
 tmp/
+*.hi
+*.o

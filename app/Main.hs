@@ -1,6 +1,7 @@
 module Main where
 
-import CsvReader (test)
+import SimpleParser (simple)
 
 main :: IO ()
-main = test
+main = simple
+-- main = test
