@@ -35,11 +35,3 @@ printAndWrite rows = printAction *> writeAction where
 
 write :: BL.ByteString -> IO () 
 write string = BL.writeFile "tmp/parsed.csv" string
-
--- handleRight row = V.forM_ row (\(userCode :: Int, groupCode :: Int) ->
---   putStrLn $ show userCode ++ show groupCode)
-
-
--- rowToPrint :: (Int, Int) -> IO (BL.ByteString)
--- rowToPrint (userCode :: Int, groupCode :: Int) =
---   putStrLn BL.pack userCode ++ BL.pack groupCode
