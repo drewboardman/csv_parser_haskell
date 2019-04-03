@@ -12,7 +12,7 @@ type SingleRow = (Int, String)
 
 simple :: IO ()
 simple = do
-  csvData <- BL.readFile "tmp/test.csv"
+  csvData <- BL.readFile "tmp/large.csv"
   case decode HasHeader csvData of
     Left err   -> putStrLn err
     Right rows -> handleRight rows
@@ -24,9 +24,10 @@ correctRows :: Rows -> Rows
 correctRows rows = V.filter filterer rows
 
 filterer :: SingleRow -> Bool
-filterer (rowID, _) = rowID > 10
+filterer (rowID, _) = filterFunc rowID
 
 filterFunc :: Int -> Bool
+filterFunc i = mod i 7 == 0
 
 printAndWrite :: Rows -> IO ()
 printAndWrite rows = printAction *> writeAction where
