@@ -18,7 +18,7 @@ simple = do
     Right rows -> handleRight rows
 
 handleRight :: Rows -> IO ()
-handleRight rows = printAndWrite $ correctRows rows
+handleRight rows = printTotalAndWrite $ correctRows rows
 
 correctRows :: Rows -> Rows
 correctRows rows = V.filter filterer rows
@@ -29,9 +29,9 @@ filterer (rowID, _) = filterFunc rowID
 filterFunc :: Int -> Bool
 filterFunc i = mod i 7 == 0
 
-printAndWrite :: Rows -> IO ()
-printAndWrite rows = printAction *> writeAction where
-  printAction = print stringified
+printTotalAndWrite :: Rows -> IO ()
+printTotalAndWrite rows = printAction *> writeAction where
+  printAction = print $ "matches: " ++ show (length rows)
   writeAction = write stringified
   stringified = encode $ V.toList rows
 

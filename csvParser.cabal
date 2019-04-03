@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2dcbd868f848a257b810365202a962ff02ee0c279817abbe57dc047eec616a7a
+-- hash: bc535db611a3ccaa9cd772230fe159832be1c202316440eea0f0fdfa66ad361e
 
 name:           csvParser
 version:        0.1.0.0
@@ -47,7 +47,7 @@ executable csvParser-exe
       Paths_csvParser
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wmissing-import-lists -Wmissing-export-lists
   build-depends:
       base >=4.7 && <5
     , csvParser

@@ -1,7 +1,7 @@
-module Main where
+module Main (main) where
 
 import SimpleParser (simple)
-import Maker (writeRows)
+import Maker ()
 
 main :: IO ()
 main = simple
