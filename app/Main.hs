@@ -1,7 +1,7 @@
 module Main (main) where
 
 import SimpleParser (simple)
-import Maker ()
+import Maker (writeRows)
 
 main :: IO ()
 main = simple
