@@ -4,5 +4,5 @@ import SimpleParser (simple)
 import Maker (writeRows)
 
 main :: IO ()
-main = writeRows
+main = simple
 -- main = test

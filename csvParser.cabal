@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1bbc322b39af1766cc45164821768cc40c2cb2178ecafccc98be14bcd48af267
+-- hash: 2dcbd868f848a257b810365202a962ff02ee0c279817abbe57dc047eec616a7a
 
 name:           csvParser
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Maker
       SimpleParser
   other-modules:
       Paths_csvParser
